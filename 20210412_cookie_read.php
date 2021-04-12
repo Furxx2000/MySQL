@@ -1,5 +1,3 @@
 <?php
-setcookie('mycookie', 'my test 中文1234');
 
-
-echo $_COOKIE['mycookie'];
+echo $_COOKIE['mycookie2'] ?? '沒有設定: mycookie2' ;

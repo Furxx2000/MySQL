@@ -4,8 +4,8 @@ $title = '會員登入';
 $pageName = 'login';
 ?>
 
-<?php include __DIR__ . './Parts/html.header.php'; ?>
-<?php include __DIR__ . './Parts/navBar.php'; ?>
+<?php include __DIR__ . '/Parts/html.header.php'; ?>
+<?php include __DIR__ . '/Parts/navBar.php'; ?>
     <style>
         form .form-group small.error {
             color: #ff0000;
@@ -39,7 +39,7 @@ $pageName = 'login';
     </div>
 </div>
 
-<?php include __DIR__ . './Parts/scripts.php'; ?>
+<?php include __DIR__ . '/Parts/scripts.php'; ?>
     <script>
         const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         const mobile_re = /^09\d{2}-?\d{3}-?\d{3}$/;
@@ -90,4 +90,4 @@ $pageName = 'login';
 
         }
     </script>
-<?php include __DIR__ . './Parts/html-footer.php'; ?>
+<?php include __DIR__ . '/Parts/html-footer.php'; ?>

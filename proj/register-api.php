@@ -1,4 +1,4 @@
-<?php include __DIR__. './Parts/config.php';
+<?php include __DIR__. '/Parts/config.php';
 
 
 $output = [

@@ -8,8 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-include __DIR__. "/Parts/table01.php";
-?>
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+
 </body>
 </html>

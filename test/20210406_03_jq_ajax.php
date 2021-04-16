@@ -20,10 +20,10 @@
     crossorigin="anonymous"></script>
 
 <script>
-    $.get('a20210401.page.php', function(data){
+    $.get('20210401_02_page.php', function(data){
         console.log(data);
         $('#result').text(data);
-    });
+    }, 'json');
 </script>
 </body>
 </html>

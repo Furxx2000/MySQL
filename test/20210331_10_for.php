@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,13 +8,24 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-<?php
-$_SESSION['sess'] = "apple, $ 24, 2pcs, <br>
-                     orange,$ 56, 3pcs ";
 
-echo $_SESSION['sess'];
+<table border="1">
+    <?php for($i=0; $i<10; $i++): ?>
+    <tr>
+        <?php for($k=0; $k<10; $k++): ?>
+            <td><?= ($i+1) * ($k+1) ?></td>
+        <?php endfor; ?>
+    </tr>
+    <?php endfor; ?>
+</table>
 
-?>
+<pre>
+    <?php
+    printf('%s * %s = %s', 2, 4, 8);
+    echo "\n";
+    printf('%X', 255);
+    ?>
+</pre>
 
 
 </body>

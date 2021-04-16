@@ -3,10 +3,10 @@
 $output = [
     'success' => false,
     'code' => 0,
-    'error' => '資料沒有新增'
+    'error' => '資料沒有修改'
 ];
 
-if(isset($_POST['name'])){
+if(isset($_POST['sid']) and isset($_POST['name'])){
 //TODO : 欄位資料檢查
 
 //    檢查手機格式
@@ -18,13 +18,13 @@ if(isset($_POST['name'])){
     }
 
 
-    $sql = "INSERT INTO `address_book`(
-                           `name`, `email`, `mobile`, 
-                           `birthday`, `address`, `created_at`
-                           ) VALUES (
-                                ?, ?, ?,
-                                ?, ?, NOW()
-                           )";
+    $sql = "UPDATE `address_book` SET 
+                          `name`=?,
+                          `email`=?,
+                          `mobile`=?,
+                          `birthday`=?,
+                          `address`=?
+            WHERE `sid`=?";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
@@ -33,13 +33,14 @@ if(isset($_POST['name'])){
         $_POST['mobile'],
         $_POST['birthday'],
         $_POST['address'],
+        $_POST['sid'],
     ]);
 
     if($stmt->rowCount()){
         $output['success'] = true;
         $output['error'] = '';
     } else {
-        $output['error'] = '新增資料發生錯誤';
+        $output['error'] = '資料沒有修改';
     }
 }
 

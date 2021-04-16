@@ -47,6 +47,7 @@ $rows = $pdo->query($sql)->fetchAll();
     <table class="table table-striped">
         <thead>
         <tr>
+            <th scope="col"><i class="fas fa-trash-alt"></i></th>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -58,15 +59,22 @@ $rows = $pdo->query($sql)->fetchAll();
         <>
         <?php foreach($rows as $r): ?>
         <tr class="del">
+            <td class="trash">
+                <a href="javascript:delete_it(<?= $r['sid'] ?>)">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
             <td><?= $r['sid'] ?></td>
             <td><?= $r['name'] ?></td>
             <td><?= $r['email'] ?></td>
             <td><?= $r['mobile'] ?></td>
             <td><?= $r['birthday'] ?></td>
-            <td><?= $r['address'] ?></td>
-            <td class="trash">
-                <a href="javascript:">
-                    <i class="fas fa-trash-alt"></i>
+            <td><?= htmlentities($r['address']) ?><br>
+<!--                --><?//= strip_tags($r['address']) ?>
+            </td>
+            <td>
+                <a href="ab-edit.php?sid=<?= $r['sid'] ?>">
+                    <i class="fas fa-edit"></i>
                 </a>
             </td>
         </tr>
@@ -77,4 +85,11 @@ $rows = $pdo->query($sql)->fetchAll();
 
 
 <?php include __DIR__ . './Parts/scripts.php'; ?>
+<script>
+    function delete_it(sid){
+        if(confirm(`確定要刪除編號為 ${sid} 的資料嗎?`)){
+            location.href = 'ab-delete.php?sid=' + sid;
+        }
+    }
+</script>
 <?php include __DIR__ . './Parts/html-footer.php'; ?>

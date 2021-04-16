@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__. './test/Parts/_connect_db.php';
+require __DIR__ . './test/Parts/_connect_db.php';
 
 $stmt = $pdo->query('SELECT * FROM address_book');
 

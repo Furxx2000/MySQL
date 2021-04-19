@@ -18,10 +18,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item <?= $pageName=='ab-list' ? 'active' : '' ?>">
-                <a class="nav-link" href="ab-list.php">列表</a>
+                <a class="nav-link" href="product-list.php">商品列表</a>
+            </li>
+            <li class="nav-item <?= $pageName=='ab-list' ? 'active' : '' ?>">
+                <a class="nav-link" href="product-list-3.php">列表(ajax)</a>
             </li>
             <li class="nav-item <?= $pageName=='ab-insert' ? 'active' : '' ?>">
-                <a class="nav-link" href="ab-insert.php">新增</a>
+                <a class="nav-link" href="cart.php">購物車</a>
             </li>
         </ul>
 

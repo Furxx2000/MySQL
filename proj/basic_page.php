@@ -1,6 +1,5 @@
 <?php include __DIR__ . './Parts/config.php'; ?>
 <?php
-define('WEB_ROOT', '/proj60');
 $title = '我的主頁2';
 
 ?>

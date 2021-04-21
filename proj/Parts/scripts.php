@@ -6,15 +6,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 <script>
-    // const nums = document.querySelectorAll('.del');
-    //
-    // nums.forEach(num => {
-    //     num.addEventListener('click', () =>{
-    //         num.classList.add('none');
-    //     });
-    // });
-    //
-    // $('.trash').click(function(){
-    //     $(this).closest('tr').remove();
-    // });
+    function showCartCount(cart){
+        let total = 0;
+        for(let i in cart){
+            total += cart[i].quantity;
+        }
+        $('.cart-count').text(total);
+    }
+
+    $.get('cart-api.php', function(data){
+        showCartCount(data);
+    }, 'json');
 </script>

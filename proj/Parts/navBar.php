@@ -24,7 +24,9 @@
                 <a class="nav-link" href="product-list-3.php">列表(ajax)</a>
             </li>
             <li class="nav-item <?= $pageName=='ab-insert' ? 'active' : '' ?>">
-                <a class="nav-link" href="cart.php">購物車</a>
+                <a class="nav-link" href="cart.php">購物車
+                    <span class="badge badge-pill badge-danger cart-count">0</span>
+                </a>
             </li>
         </ul>
 

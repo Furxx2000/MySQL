@@ -120,8 +120,10 @@ $rows = $pdo->query($p_sql)->fetchAll();
 
             // console.log({pid, qty}, card.find('.card-title').text());
 
+            //使用Ajax方法加入購物車
             $.get('cart-api.php', {action:'add', pid, qty}, function(data){
                 console.log(data);
+                showCartCount(data);  //更新選單上數量的提示
             }, 'json');
         })
     </script>

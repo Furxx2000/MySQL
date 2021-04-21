@@ -79,7 +79,7 @@ $pageName = 'login';
                     function(data){
                         if(data.success){
                             alert('登入成功');
-                            location.href = 'basic_page.php';
+                            location.href = 'cart.php';
                         } else{
                             alert(data.error);
                         }
